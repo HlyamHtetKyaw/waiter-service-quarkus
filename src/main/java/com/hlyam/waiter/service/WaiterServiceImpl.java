@@ -14,7 +14,7 @@ public class WaiterServiceImpl extends WaiterServiceGrpc.WaiterServiceImplBase {
     public void createOrder(CreateOrderRequest request,
                             StreamObserver<OrderResponse> responseObserver) {
         OrderResponse response = OrderResponse.newBuilder()
-                .setMessage("Order received: " + request.getOrder())
+                .setMessage(request.getOrder())
                 .build();
         responseObserver.onNext(response);
         responseObserver.onCompleted();
